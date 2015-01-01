@@ -6,6 +6,10 @@
   Submitted <%= time_ago_in_words(@post.created_at) %> Ago
 </p>
 
+<p class="edit">
+  <%= link_to 'Edit Post', edit_post_path(@post) %> 
+</p>
+
 <p class="body">
-  <%= @post.body %> 
+  <%= @post.body %>
 </p>

@@ -1,0 +1,24 @@
+<% if @post.errors.any? %>
+<div class="alert alert-danger alert-dismissable" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <p> <strong>Oops! </strong>Looks like you have errors in your form submission. </p>
+  <ul>
+    <% @post.errors.full_messages.each do |message| %>
+    <li> <%= message %> </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<%= bootstrap_form_for :post, url: posts_path do |f| %>
+<p>
+  <%= f.text_field :title, placeholder: "Post Title" %>
+</p>
+
+<p>
+  <%= f.text_area :body, placeholder: "Enter the blog post...", :rows => 10 %>
+</p>
+
+<p>
+  <%= f.submit :class=> 'btn btn-success' %>
+</p>
+<% end %>
