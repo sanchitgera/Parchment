@@ -3,6 +3,8 @@
 <head>
   <title>Blog</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', 'http://fonts.googleapis.com/css?family=Open+Sans' %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -29,10 +31,10 @@
         <!-- sidebar -->
         <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
           <ul class="nav">
-            <li class="active"><%= link_to "Home", root_path %> </li>
-            <li><%= link_to "New Post", :controller => :posts, :action => :new %></li>
-            <li><a href="#">About</a></li>
-            <li class="login"><a href="#">Sign In</a></li>
+            <li class="active"><span class="fa fa-home"></span> <%= link_to "Home", root_path %> </li>
+            <li><span class="fa fa-pencil"></span><%= link_to "New Post", :controller => :posts, :action => :new %></li>
+            <li><span class="fa fa-user"></span><a href="#">About</a></li>
+            <li class="login"><span class="fa fa-key"></span><a href="#">Sign In</a></li>
           </ul>
         </div>
 

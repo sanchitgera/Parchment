@@ -15,3 +15,7 @@
  *= require rails_bootstrap_forms
  *= require_self
  */
+
+ body{
+   font-family: 'Open Sans', sans-serif;
+ }
