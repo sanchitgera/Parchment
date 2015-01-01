@@ -30,6 +30,8 @@ gem 'font-awesome-rails'
 
 gem 'bootstrap_form'
 
+gem 'data-confirm-modal', github: 'ifad/data-confirm-modal'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
