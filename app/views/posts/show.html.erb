@@ -14,3 +14,10 @@
 <p class="body">
   <%= @post.body %>
 </p>
+<hr />
+
+<div class="comments">
+  <h2>Comments</h2>
+  <%= render @post.comments.reverse %>
+  <%= render 'comments/form' %>
+</div>
