@@ -58,5 +58,13 @@ body {
 }
 
 .nav > li > a{
-  display : inline-block; 
+  display : inline-block;
+}
+.navbar-brand{
+  color : #FFF !important;
+}
+
+.navbar{
+  background-color : #34495e;
+  
 }
