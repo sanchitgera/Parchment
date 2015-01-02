@@ -4,7 +4,6 @@
     <tr>
       <td><%= user.email %> </td>
       <td>
-        <% puts user.inspect %>
         <%= button_to 'Delete', user_registration_path, method: :delete, data: {confirm: 'Are you Sure'}, class: 'btn btn-danger btn-disabled', disabled: true  %>
       </td>
 
