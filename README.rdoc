@@ -7,3 +7,4 @@ Features in progress :
 * User roles
 * Markdown rendering and editing 
 * Omniauth 
+* Comprehensive Tests
