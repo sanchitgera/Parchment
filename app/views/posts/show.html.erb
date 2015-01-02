@@ -5,13 +5,15 @@
 <p class="date">
   Submitted <%= time_ago_in_words(@post.created_at) %> Ago
 </p>
-<% if user_signed_in %>
-<p class="edit">
-  <%= link_to 'Edit Post', edit_post_path(@post) %>
-  <%= link_to 'Delete Post', post_path(@post), method: :delete, data: {confirm: 'Are you Sure'}  %>
-</p>
-<% end %> 
-
+<% if user_signed_in? %>
+<div class="edit">
+  <div class="btn-group" role="group" aria-label="...">
+    <%= button_to 'Edit Post', edit_post_path(@post), method: :get, class: 'btn btn-default' %>
+    <%= button_to 'Delete Post', post_path(@post), method: :delete, data: {confirm: 'Are you Sure'}, class: 'btn btn-danger'  %>
+  </div>
+</div>
+<% end %>
+<br/>
 <p class="body">
   <%= @post.body %>
 </p>
