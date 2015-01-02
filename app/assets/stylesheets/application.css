@@ -20,3 +20,7 @@
    font-family: 'Open Sans', sans-serif;
    padding-bottom : 25px;
  }
+
+ a:hover{
+   text-decoration : none; 
+ }

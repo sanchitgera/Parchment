@@ -1,9 +1,19 @@
+<div class="row">
+  <div class="col-xs-10">
 <h2>All Posts</h2>
-<hr />
+</div>
+<div class="col-xs-2">
+  <h2><%= link_to '', new_post_path, class: 'fa fa-plus', title: 'New Post' %></h2>
+</div>
+</div>
+<hr/>
 
 <% @posts.each do |post| %>
   <div class="post_wrapper">
     <h2 class="post_title"> <%= link_to post.title, post %> </h2>
     <p class="date"><i class="fa fa-clock-o"></i> <%= post.created_at.strftime("%B %d %Y") %></p>
+    <p class="excerpt">
+      <%= truncate post.body, :length => 250 %> <%= link_to 'Read More', post %>
+    </p>
   </div>
 <% end %>
