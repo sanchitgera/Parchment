@@ -43,6 +43,11 @@
             <li>
               <i class="fa fa-sign-out"></i><%= link_to('Logout', destroy_user_session_path, :method => :delete, data: {confirm: 'Are you sure you want to logout?'}) %>
             </li>
+
+            <li>
+              <i class="fa fa-users"></i><%= link_to('Users', users_show_path, ) %>
+            </li>
+
             <% else %>
             <li>
               <i class="fa fa-sign-in"></i><%= link_to('Login', new_user_session_path)  %>
@@ -54,6 +59,12 @@
 
             <li><span class="fa fa-user"></span><%= link_to "About", about_path %> </li>
           </ul>
+
+          <% if user_signed_in? %>
+          <div class="text-center">
+            <%= button_to 'Delete Account', user_registration_path, method: :delete, data: {confirm: 'Are you Sure'}, class: 'btn btn-danger delete-accoun'  %>
+          </div>
+          <% end %>
         </div>
 
         <!-- main area -->
@@ -61,7 +72,7 @@
           <% if flash[:notice] %>
             <div class="row">
               <div class="col-xs-6">
-                <div class="alert alert-danger" role="alert"><%= flash[:notice] %></div>
+                <div class="alert alert-success" role="alert"><%= flash[:notice] %></div>
               </div>
             </div>
           <% end %>
