@@ -1,0 +1,14 @@
+<h2>Manage Users</h2>
+<table class="table table-hover">
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %> </td>
+      <td>
+        <% puts user.inspect %>
+        <%= button_to 'Delete', user_registration_path, method: :delete, data: {confirm: 'Are you Sure'}, class: 'btn btn-danger'  %>
+      </td>
+
+    </tr>
+  <% end %>
+
+</table>
