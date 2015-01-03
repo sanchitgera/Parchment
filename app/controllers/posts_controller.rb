@@ -1,7 +1,13 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
-    @posts = Post.all.order('created_at DESC')
+    if !user_signed_in?
+      @title = 'All Posts'
+    else
+      @title = 'Approved Posts'
+    end
+    
+    @posts = Post.where(:approved => true).order('created_at DESC')
   end
 
   def new
@@ -34,6 +40,12 @@ class PostsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def pending
+    @posts = Post.where(:approved => false)
+    @title = 'Pending Posts'
+    render 'index'
   end
 
   def destroy
