@@ -9,7 +9,7 @@
     <table class="table table-hover">
       <% @admins.each do |user| %>
       <tr>
-        <td class="user-email"><%= user.email %> </td>
+        <td class="user-email"><%= link_to user.email, user_index_path(user) %> </td>
         <td>
           <%= button_to 'Delete', user_registration_path, method: :delete, data: {confirm: 'Are you Sure'}, class: 'btn btn-danger btn-disabled', disabled: true  %>
         </td>

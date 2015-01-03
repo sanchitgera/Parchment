@@ -1,0 +1,16 @@
+<h2>User Profile </h2>
+<hr />
+<p>
+<strong>Email : </strong><%= @user.email %>
+</p>
+<hr />
+<h3><%= @posts.count %> Posts by <%= @user.email %> :</h3>
+<% @posts.each do |post| %>
+<div class="post_wrapper">
+  <h3 class="post_title"> <%= link_to post.title, post %> </h3>
+  <p class="date"><i class="fa fa-clock-o"></i> <%= post.created_at.strftime("%B %d %Y") %></p>
+  <p class="excerpt">
+    <%= truncate post.body, :length => 250 %> <%= link_to 'Read More', post %>
+  </p>
+</div>
+<% end %>
