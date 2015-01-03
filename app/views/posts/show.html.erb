@@ -6,7 +6,7 @@
   <i class="fa fa-clock-o"></i> Submitted <%= time_ago_in_words(@post.created_at) %> Ago
 </p>
 <p class="user">
-  <i class="fa fa-user"></i> Submitted by <%= @post.user.email %> 
+  <i class="fa fa-user"></i> Submitted by <%= link_to @post.user.email, user_index_path(@post.user) %> 
 </p>
 <% if user_signed_in? %>
 <div class="edit">

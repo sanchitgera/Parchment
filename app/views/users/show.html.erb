@@ -6,7 +6,7 @@
 </ul>
 <div id="my-tab-content" class="tab-content">
   <div class="tab-pane active" id="admins">
-    <table class="table table-hover">
+    <table class="table table-list table-hover">
       <% @admins.each do |user| %>
       <tr>
         <td class="user-email"><%= link_to user.email, user_index_path(user) %> </td>
@@ -20,7 +20,7 @@
     </table>
   </div>
   <div class="tab-pane" id="editors">
-    <table class="table table-hover">
+    <table class="table table-list table-hover">
       <% @editors.each do |user| %>
       <tr>
         <td class="user-email"><%= link_to user.email, user_index_path(user) %> </td>
