@@ -4,10 +4,15 @@
 .user-email{
   width : 800px;
 }
-table{
+.table-list{
   margin-top : 15px;
 }
 
-.table > tbody > tr:first-child > td{
+.table-list > tbody > tr:first-child > td{
   border-top : 0px;
+}
+
+.table-profile > tbody > tr > td:first-child{
+  width: 400px;
+  font-weight: bold;
 }
