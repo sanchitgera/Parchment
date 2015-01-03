@@ -4,3 +4,10 @@
 .user-email{
   width : 800px;
 }
+table{
+  margin-top : 15px;
+}
+
+.table > tbody > tr:first-child > td{
+  border-top : 0px;
+}
