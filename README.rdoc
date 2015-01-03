@@ -4,7 +4,7 @@ Demo : https://limitless-bayou-4091.herokuapp.com/
 Features in progress : 
 
 * User Management
-* User roles
-* Markdown rendering and editing 
+* Syntax highlighting 
+* User owned posts
 * Omniauth 
 * Comprehensive Tests
