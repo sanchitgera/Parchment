@@ -10,7 +10,7 @@
   <div class="btn-group" role="group" aria-label="...">
     <%= button_to 'Edit', edit_post_path(@post), method: :get, class: 'btn btn-default' %>
     <%= button_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you Sure'}, class: 'btn btn-danger'  %>
-    <% if user_signed_in? && !@post.approved %>
+    <% if user_signed_in? && !@post.approved && user_is_admin?(current_user) %>
       <%= button_to 'Approve', post_path(@post, :post => {:approved => true} ), method: :put, class: 'btn btn-success' %>
     <% end %>
   </div>

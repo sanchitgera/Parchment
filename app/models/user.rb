@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   after_create :assign_default_role
 
-  def assign_default_role
-     add_role(:editor)
-   end
+  private
+    def assign_default_role
+       add_role(:editor)
+     end
 end

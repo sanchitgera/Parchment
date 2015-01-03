@@ -1,5 +1,5 @@
 module UsersHelper
   def user_is_admin?(user)
-    user.role.eql? 'admin'
+    user.has_role? :admin
   end
 end
