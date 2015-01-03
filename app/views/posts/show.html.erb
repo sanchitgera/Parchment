@@ -8,8 +8,11 @@
 <% if user_signed_in? %>
 <div class="edit">
   <div class="btn-group" role="group" aria-label="...">
-    <%= button_to 'Edit Post', edit_post_path(@post), method: :get, class: 'btn btn-default' %>
-    <%= button_to 'Delete Post', post_path(@post), method: :delete, data: {confirm: 'Are you Sure'}, class: 'btn btn-danger'  %>
+    <%= button_to 'Edit', edit_post_path(@post), method: :get, class: 'btn btn-default' %>
+    <%= button_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you Sure'}, class: 'btn btn-danger'  %>
+    <% if user_signed_in? && !@post.approved %>
+      <%= button_to 'Approve', post_path(@post, :post => {:approved => true} ), method: :put, class: 'btn btn-success' %>
+    <% end %>
   </div>
 </div>
 <% end %>

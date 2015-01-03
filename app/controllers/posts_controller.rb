@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     else
       @title = 'Approved Posts'
     end
-    
+
     @posts = Post.where(:approved => true).order('created_at DESC')
   end
 
@@ -35,7 +35,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    if @post.update(params[:post].permit(:title, :body))
+    if @post.update(params[:post].permit(:title, :body, :approved))
       redirect_to @post
     else
       render 'edit'
