@@ -1,0 +1,40 @@
+<h2>User Profile </h2>
+<hr />
+<div class="row">
+<div class="col-xs-10">
+<table class="table table-profile table-striped">
+  <tr>
+    <td>Email</td>
+    <td><%= @user.email %></td>
+  </tr>
+
+  <tr>
+    <td>Number of Posts</td>
+    <td><%= @user.posts.count %></td>
+  </tr>
+
+  <tr>
+    <td>Joined</td>
+    <td><%= @user.created_at.strftime('%d %b %Y') %></td>
+  </tr>
+
+  <tr>
+    <td>Role</td>
+    <td><%= @user.role.camelize %></td>
+  </tr>
+</table>
+</div>
+</div>
+<% if @posts.any? %>
+<hr />
+<h3>Posts by <%= @user.email %> :</h3>
+<% @posts.each do |post| %>
+<div class="post_wrapper">
+  <h3 class="post_title"> <%= link_to post.title, post %> </h3>
+  <p class="date"><i class="fa fa-clock-o"></i> <%= post.created_at.strftime("%B %d %Y") %></p>
+  <p class="excerpt">
+    <%= truncate post.body, :length => 250 %> <%= link_to 'Read More', post %>
+  </p>
+</div>
+<% end %>
+<% end %>

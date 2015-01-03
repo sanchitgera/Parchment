@@ -6,5 +6,6 @@ Rails.application.routes.draw do
     resources :comments
   end
   get '/about', to: 'pages#about'
+  get '/users(/:id)', to: 'users#index', as: 'user_index'
   root 'posts#index'
 end
