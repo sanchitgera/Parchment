@@ -19,6 +19,10 @@
 </p>
 
 <p>
+  <%= f.select :categories, options_for_select(Category.all.map{|c| c.name}), {}, {multiple: true, class: 'selectpicker multiple'} %>
+</p>
+
+<p>
   <%= f.submit :class=> 'btn btn-success' %>
 </p>
 <% end %>
