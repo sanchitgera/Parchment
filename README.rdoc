@@ -3,8 +3,8 @@ Demo : https://limitless-bayou-4091.herokuapp.com/
 
 Features in progress : 
 
+* Categories and Tags
 * User Management
-* Syntax highlighting 
-* User owned posts
+* Syntax highlighting in posts
 * Omniauth 
 * Comprehensive Tests
