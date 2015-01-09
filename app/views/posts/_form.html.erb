@@ -19,7 +19,7 @@
 </p>
 
 <p>
-  <%= collection_check_boxes(:post, :categories, Category.all, :id, :name) %>
+  <%= collection_check_boxes(:post, :categories, Category.all, :id, :name, {checked: true}) %>
 </p>
 
 <p>

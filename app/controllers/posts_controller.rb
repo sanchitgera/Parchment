@@ -21,10 +21,7 @@ class PostsController < ApplicationController
   def create
     opts = post_params
     opts[:user] = current_user
-    cids = opts[:categories]
-    categories = []
-    cids.reject{|c| c.empty?}.each{|cid| categories.push Category.find cid}
-    opts[:categories] = categories
+    opts[:categories] = retrieve_categories(opts)
     @post = Post.new(opts)
 
     if @post.save
@@ -40,8 +37,10 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
+    opts  = post_params
+    opts[:categories] = retrieve_categories(opts)
 
-    if @post.update(params[:post].permit(:title, :body, :approved))
+    if @post.update(opts)
       redirect_to @post
     else
       render 'edit'
@@ -64,5 +63,12 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :body, :categories => [])
+  end
+
+  def retrieve_categories(opts)
+    cids = opts[:categories]
+    categories = []
+    cids.reject{|c| c.empty?}.each{|cid| categories.push Category.find cid}
+    return categories
   end
 end
