@@ -11,6 +11,13 @@
 <% @posts.each do |post| %>
   <div class="post_wrapper">
     <h2 class="post_title"> <%= link_to post.title, post %> </h2>
+    <% if post.categories.any? %>
+    <div class="labels">
+      <% post.categories.each do |c| %>
+        <span class="label label-default"> <%= c.name %> </span>
+      <% end %>
+    </div>
+    <% end %>
     <p class="date"><i class="fa fa-clock-o"></i> <%= post.created_at.strftime("%B %d %Y") %></p>
     <p class="excerpt">
       <%= truncate post.body, :length => 250 %> <%= link_to 'Read More', post %>

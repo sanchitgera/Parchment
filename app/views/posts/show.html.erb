@@ -1,6 +1,13 @@
 <h1 class="title">
   <%= @post.title %>
 </h1>
+<% if @post.categories.any? %>
+<div class="labels">
+  <% @post.categories.each do |c| %>
+  <span class="label label-default"> <%= c.name %> </span>
+  <% end %>
+</div>
+<% end %>
 
 <p class="date">
   <i class="fa fa-clock-o"></i> Submitted <%= time_ago_in_words(@post.created_at) %> Ago
