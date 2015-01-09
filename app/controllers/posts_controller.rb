@@ -21,6 +21,10 @@ class PostsController < ApplicationController
   def create
     opts = post_params
     opts[:user] = current_user
+    cids = opts[:categories]
+    categories = []
+    cids.reject{|c| c.empty?}.each{|cid| categories.push Category.find cid}
+    opts[:categories] = categories
     @post = Post.new(opts)
 
     if @post.save
@@ -59,7 +63,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    puts params.inspect
-    params.require(:post).permit(:title, :body, :categories)
+    params.require(:post).permit(:title, :body, :categories => [])
   end
 end
