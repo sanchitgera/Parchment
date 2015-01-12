@@ -1,5 +1,10 @@
 == README
 Demo : https://limitless-bayou-4091.herokuapp.com/
+Login credentials : 
+email : editor@gmail.com
+password : testpassword 
+
+**Note** This will log you into an editor account where you can submit posts for approval and modify them but not actually approve pending posts :) 
 
 Features in progress : 
 
