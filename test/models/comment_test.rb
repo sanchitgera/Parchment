@@ -1,7 +1,9 @@
 require 'test_helper'
 
 class CommentTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test 'validate parameters' do
+    @comment = Comment.new
+    assert_not @comment.valid?
+    assert_equal [:name, :body], @comment.errors.keys
+  end
 end
