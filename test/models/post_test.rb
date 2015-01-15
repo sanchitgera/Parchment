@@ -22,5 +22,7 @@ class PostTest < ActiveSupport::TestCase
     @post.body = string_of 99
     @post.save
     assert_equal [:body], @post.errors.keys
+    @post.body = string_of 100
+    assert @post.save
   end
 end

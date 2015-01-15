@@ -46,4 +46,5 @@ gem 'devise'
 # gem 'debugger', group: [:development, :test]
 gem 'rails_12factor', group: :production
 gem 'redcarpet'
-gem 'rolify' 
+gem 'rolify'
+gem 'simplecov', :require => false,  :group => :test
