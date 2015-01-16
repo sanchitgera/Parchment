@@ -25,6 +25,9 @@
       <tr>
         <td class="user-email"><%= link_to user.email, user_index_path(user) %> </td>
         <td>
+          <%= button_to 'Promote to Admin', user_promote_path(user), data: {confirm: 'Are you Sure'}, class: 'btn btn-success'  %>
+        </td>
+        <td>
           <%= button_to 'Delete', user_registration_path, method: :delete, data: {confirm: 'Are you Sure'}, class: 'btn btn-danger btn-disabled', disabled: true  %>
         </td>
 

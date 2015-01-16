@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get '/posts/pending', to: 'posts#pending'
   get '/users/show', to: 'users#show'
+  post '/users/promote/:id', to: 'users#promote', as: 'user_promote'
   devise_for :users
   resources :posts do
     resources :comments
