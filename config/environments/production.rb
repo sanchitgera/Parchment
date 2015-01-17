@@ -78,4 +78,6 @@ Rails.application.configure do
 
   config.assets.precompile = ['*.js', '*.css', '*.css.erb']
   
+  #Google Analytics tracking code 
+  GA.tracker = "UA-50684004-2"  
 end

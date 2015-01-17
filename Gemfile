@@ -48,3 +48,4 @@ gem 'rails_12factor', group: :production
 gem 'redcarpet'
 gem 'rolify'
 gem 'simplecov', :require => false,  :group => :test
+gem 'google-analytics-rails', :group => :production 
