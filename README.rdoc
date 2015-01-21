@@ -11,8 +11,7 @@ This will log you into an editor account where you can submit posts for approval
 
 Features in progress : 
 
-* Categories and Tags
-* User Management
+* Convert to a mountable engine 
 * Syntax highlighting in posts
 * Omniauth 
 * Comprehensive Tests
